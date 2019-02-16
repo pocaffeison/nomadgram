@@ -5,11 +5,24 @@ from . import models
 
 @admin.register(models.Image)
 class ImageAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        'created_at',
+        'updated_at',
+        'file',
+        'location',
+        'caption',
+        'creator',
+    )
 
 @admin.register(models.Like)
 class LikeAdmin(admin.ModelAdmin):
-    pass
+    
+    list_display = (
+        'creator',
+        'image',
+        'created_at',
+        'updated_at',
+    )
 
 @admin.register(models.Comment)
 class CommentAdmin(admin.ModelAdmin):
@@ -21,4 +34,4 @@ class CommentAdmin(admin.ModelAdmin):
         'created_at',
         'updated_at',
     )
-    pass
+    
